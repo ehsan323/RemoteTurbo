@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_warning_yellow_24dp"
+                android:id="@+id/warning_image"
+                android:layout_width="130dp"
+                android:layout_height="120dp"/>
+
+        <TextView
+                tools:text="درب خودرو بسته است."
+                android:textSize="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/warning_message"
+                android:layout_below="@+id/warning_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:textColor="@color/white"
+                android:background="@drawable/bg_red_button"
+                android:text="بستن هشدار"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btn_warning"
+                android:layout_below="@+id/warning_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

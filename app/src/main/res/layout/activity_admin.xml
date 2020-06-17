@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="viewmodel"
+                type="ir.turbo.turboremotecontrol.ui.admin.AdminViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+            android:background="@color/remote_dark_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/admin_title"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="50dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="تعریف ادمین"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/description_admin"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:text="@string/register_admin_description"
+                        android:textSize="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/admin_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                        android:id="@+id/relative_admin_phone"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/bg_edit_text"
+                        android:layout_below="@+id/description_admin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/phone_image"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_local_phone_black_24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:inputType="number"
+                            android:text="@={viewmodel.phoneNumber}"
+                            android:hint="تلفن همراه"
+                            android:gravity="center"
+                            android:background="@android:color/transparent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_toLeftOf="@+id/phone_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <Button
+                        android:onClick="@{() -> viewmodel.registerAdminClick()}"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:id="@+id/admin_registeration"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_green_button"
+                        android:text="ثبت ادمین"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_below="@+id/relative_admin_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <Button
+                        android:onClick="@{() -> viewmodel.deleteAdminClick()}"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:id="@+id/delete_admin"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_red_button"
+                        android:text="حذف ادمین"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_below="@+id/admin_registeration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <Button
+                        android:onClick="@{() -> viewmodel.closeAdminPageClick()}"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#909090"
+                        android:background="@drawable/bg_edit_text"
+                        android:text="بازگشت"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_below="@+id/delete_admin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <TextView
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:text="ردیاب توربو"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</layout>

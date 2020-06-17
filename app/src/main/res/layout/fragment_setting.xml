@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="viewmodel"
+                type="ir.turbo.turboremotecontrol.ui.setting.SettingViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+            android:background="@color/remote_dark_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:id="@+id/setting_title"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:textSize="20dp"
+                android:text="تنظیمات"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <ScrollView
+                android:layout_below="@+id/setting_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <RelativeLayout
+                        android:id="@+id/relative_car_total_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.showCarTotalConditionDialog()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/car_total_condition"
+                                    android:src="@drawable/ic_autorenew_black_24dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/car_total_condition"
+                                    android:text="وضعیت کلی خودرو"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_below="@+id/relative_car_total_con"
+                        android:id="@+id/relative_car_sensetive_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.carSensivityClick()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/car_sensetive_condition"
+                                    android:src="@drawable/ic_parking_sensor1"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/car_sensetive_condition"
+                                    android:text="وضعیت حساسیت خودرو به ضربه"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/relative_car_speed_con"
+                        android:layout_below="@+id/relative_car_sensetive_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.showCarSpeedLimitDialog()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/car_speed_condition"
+                                    android:src="@drawable/ic_car_speed"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/car_speed_condition"
+                                    android:text=" تعیین سرعت خودرو"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/relative_cancel_help_req"
+                        android:layout_below="@+id/relative_car_speed_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.cancelHelpClick()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/cancel_help_request"
+                                    android:src="@drawable/ic_cancel_help"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/cancel_help_request"
+                                    android:text="لغو درخواست کمک"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/relative_admin_con"
+                        android:layout_below="@+id/relative_cancel_help_req"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.registerAdminClick()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/admin_edit_delete"
+                                    android:src="@drawable/ic_admin_edit"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/admin_edit_delete"
+                                    android:text="تعریف یا حذف ادمین"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <!--android:text="@{viewmodel.adminPhoneNumber}"-->
+                            <TextView
+                                    android:layout_alignParentLeft="true"
+                                    tools:text="09374770862"
+                                    android:id="@+id/admin_phone_number"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/change_pass"
+                        android:layout_below="@+id/relative_admin_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:onClick="@{() -> viewmodel.changePasswordClick()}"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/change_password"
+                                    android:src="@drawable/ic_change_pass"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/change_password"
+                                    android:text="تغییر رمز"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@{viewmodel.remotePassword}"
+                                    android:id="@+id/password"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_below="@+id/change_pass"
+                        android:id="@+id/relative_two_stage_verification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:layout_marginLeft="16dp"
+                                    android:id="@+id/car_condition"
+                                    android:src="@drawable/ic_two_verification_black_24dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:textColor="@color/md_black_1000"
+                                    android:layout_toLeftOf="@+id/car_condition"
+                                    android:text="تایید دو مرحله ای"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                    android:checked="@={viewmodel.switchStatus}"
+                                    android:onCheckedChanged="@{(switch, checked) -> viewmodel.onCheckedChanged(checked)}"
+                                    android:layout_alignParentLeft="true"
+                                    android:id="@+id/two_verification_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+
+                <Button
+                        android:onClick="@{() -> viewmodel.exitAPPclick()}"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_red_button"
+                        android:text="خروج"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="70dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_below="@+id/relative_two_stage_verification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</layout>

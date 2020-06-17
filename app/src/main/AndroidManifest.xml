@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="ir.turbo.turboremotecontrol">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:name=".RemoteApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity
+                android:screenOrientation="portrait"
+                android:name=".ui.launcher.LauncherActivity">
+
+        </activity>
+        <activity
+                android:name=".ui.login.LoginActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustPan"></activity>
+        <activity
+                android:name=".ui.password.PasswordActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustPan"></activity>
+        <activity
+                android:name=".ui.startup.StartupActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+                android:name=".ui.admin.AdminActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity
+                android:name=".ui.main.MainActivity"
+                android:screenOrientation="portrait"/>
+
+        <receiver android:name=".ui.main.SmsReceiver">
+            <intent-filter android:priority="9999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyC3DGAV6AZ6CMVoONi-XHAjnrEXsiRbCak" />
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="4dedab0302de777c5196d4e414bb1f10db05ec27" />
+
+        <uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false" />
+    </application>
+
+</manifest>

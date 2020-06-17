@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="viewmodel"
+                type="ir.turbo.turboremotecontrol.ui.startup.StartupViewModel"/>
+
+    </data>
+
+    <ScrollView
+            android:background="@color/remote_dark_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:padding="20dp"
+                    android:src="@drawable/main_logo"
+                    android:id="@+id/app_icon_startup"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                        android:onClick="@{() ->viewmodel.turbowebsiteClick()}"
+                        android:id="@+id/card_website"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                            android:paddingBottom="3dp"
+                            android:paddingTop="3dp"
+                            android:background="#78C149"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/website_startup"
+                                android:text="وبسایت"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <ImageView
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_toLeftOf="@+id/website_startup"
+                                android:src="@drawable/colorless_remote_icon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:visibility="gone"
+                        android:onClick="@{() ->viewmodel.telegramClick()}"
+                        app:cardBackgroundColor="#41B3E6"
+                        android:layout_below="@+id/card_website"
+                        android:id="@+id/card_telegram"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/website_telegram"
+                                android:text="تلگرام"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <ImageView
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_toLeftOf="@+id/website_telegram"
+                                android:src="@drawable/colorless_telegram"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:onClick="@{() ->viewmodel.instagramClick()}"
+                        android:layout_below="@+id/card_telegram"
+                        android:id="@+id/card_instagram"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                            android:background="@drawable/bg_gradient_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/website_instagram"
+                                android:text="اینستاگرام"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <ImageView
+                                android:padding="10dp"
+                                android:layout_toLeftOf="@+id/website_instagram"
+                                android:src="@drawable/instagram"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                        android:paddingTop="10dp"
+                        android:id="@+id/relative_startup_phone"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginLeft="23dp"
+                        android:background="@drawable/bg_edit_text"
+                        android:layout_below="@+id/card_instagram"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/phone_image"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_local_phone_black_24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:inputType="number"
+                            android:text="@={viewmodel.remotePhoneNumber}"
+                            android:gravity="center"
+                            android:hint="شماره سیم کارت ردیاب"
+                            android:background="@android:color/transparent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_toLeftOf="@+id/phone_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <Button
+                        android:onClick="@{() -> viewmodel.entranceButtonClick()}"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="5dp"
+                        android:id="@+id/startup_button"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_green_button"
+                        android:text=" ورود به ریموت"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginLeft="23dp"
+                        android:layout_below="@+id/relative_startup_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:onClick="@{() ->viewmodel.supportClick()}"
+                        android:textColor="@color/white"
+                        android:id="@+id/support_call"
+                        android:layout_marginTop="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/startup_button"
+                        android:text="تماس با پشتیبانی "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textColor="@color/white"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/support_call"
+                        android:text="ردیاب توربو"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

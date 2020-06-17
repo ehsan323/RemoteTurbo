@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/remote_dark_color"
+                app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+                app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
+                app:itemIconTint="@color/nav_item_state_list"
+                app:itemTextColor="@color/item_titles_color"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/menu_navigation_with_view_pager" />
+
+
+        <FrameLayout
+                android:id="@+id/frame"
+                android:layout_above="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+<!--        <Button-->
+<!--                android:text="test"-->
+<!--                android:id="@+id/btn_test"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+    </RelativeLayout>
+
+
+</layout>

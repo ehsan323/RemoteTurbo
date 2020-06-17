@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        app:cardPreventCornerOverlap="true"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+            android:id="@+id/relative_params"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+                android:textStyle="bold"
+                android:id="@+id/car_speed_limit_title"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="هشدار کنترل سرعت خودرو چقدر باشد"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:textStyle="bold"
+                android:layout_below="@+id/car_speed_limit_title"
+                android:id="@+id/car_speed_limit_value"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                tools:text="0 km/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <SeekBar
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@+id/car_speed_limit_value"
+                android:id="@+id/speed_limit_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+        <Button
+                android:id="@+id/car_speed_limit_button"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_green_button"
+                android:text="ذخیره"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/speed_limit_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/cancel_speed_limit_button"
+                android:textColor="#909090"
+                android:background="@drawable/bg_edit_text"
+                android:text="بازگشت"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/car_speed_limit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

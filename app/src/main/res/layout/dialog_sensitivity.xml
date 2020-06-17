@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp"
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:paddingTop="25dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/linear_radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioButton
+                    android:id="@+id/high_sensitivity"
+                    android:text="حساسیت بالا"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="حساسیت متوسط"
+                    android:layout_below="@+id/high_sensitivity"
+                    android:id="@+id/mid_sensitivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="حساسیت کم"
+                    android:layout_below="@+id/mid_sensitivity"
+                    android:id="@+id/low_sensitivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+                android:layoutDirection="ltr"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:weightSum="10"
+                android:layout_below="@+id/linear_radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <Button
+                    android:id="@+id/cancel_btn_click"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="16dp"
+                    android:text="خیر"
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            <Button
+                    android:id="@+id/ok_btn_click"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:text="بله"
+                    android:background="@drawable/bg_green_button"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
